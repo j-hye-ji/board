@@ -20,4 +20,8 @@
                date_format(createdAt, "%Y-%m-%d %H:%i:%s") as createdAt
         from board_table where id=#{id}
     </select>
+    <update id="update">
+        /* 게시글 수정: 해당 id 게시물의 제목과 내용만 수정 가능하도록 */
+        update board_table set boardTitle=#{boardTitle}, boardContents=#{boardContents} where id=#{id}
+    </update>
 </mapper>

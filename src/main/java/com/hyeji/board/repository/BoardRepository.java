@@ -30,4 +30,8 @@ public class BoardRepository {
     public BoardDTO findById(Long id) {
         return sql.selectOne("Board.findById", id); // selectOne: 조회되는 것이 1개
     }
+
+    public void update(BoardDTO boardDTO) {
+        sql.update("Board.update", boardDTO);
+    }
 }

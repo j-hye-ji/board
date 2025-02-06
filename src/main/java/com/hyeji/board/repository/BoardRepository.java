@@ -20,6 +20,14 @@ public class BoardRepository {
     }
 
     public List<BoardDTO> findAll() {
-        return sql.selectList("Board.findAll");
+        return sql.selectList("Board.findAll"); // selectList: 조회되는 것이 여러 개
+    }
+
+    public void updateHits(Long id) {
+        sql.update("Board.updateHits", id);
+    }
+
+    public BoardDTO findById(Long id) {
+        return sql.selectOne("Board.findById", id); // selectOne: 조회되는 것이 1개
     }
 }
